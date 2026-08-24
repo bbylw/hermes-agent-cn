@@ -99,6 +99,39 @@ function DocLink({ href, children }: { href?: string; children?: ReactNode }) {
   );
 }
 
+function CopyIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+    </svg>
+  );
+}
+
+function CheckIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <polyline points="20 6 9 17 4 12" />
+    </svg>
+  );
+}
+
 function CodeBlock({ children, lang }: { children?: ReactNode; lang: string }) {
   const [copied, setCopied] = useState(false);
   const code = extractText(children);
@@ -106,7 +139,7 @@ function CodeBlock({ children, lang }: { children?: ReactNode; lang: string }) {
     navigator.clipboard?.writeText(code).then(
       () => {
         setCopied(true);
-        window.setTimeout(() => setCopied(false), 1500);
+        window.setTimeout(() => setCopied(false), 1600);
       },
       () => undefined,
     );
@@ -114,9 +147,15 @@ function CodeBlock({ children, lang }: { children?: ReactNode; lang: string }) {
   return (
     <div className="doc-code">
       <div className="doc-code-bar">
-        <span>{lang || "code"}</span>
-        <button type="button" onClick={onCopy} aria-label="复制代码">
-          {copied ? "已复制 ✓" : "复制"}
+        <span className="doc-code-lang">{lang || "code"}</span>
+        <button
+          type="button"
+          className={copied ? "doc-code-copy copied" : "doc-code-copy"}
+          onClick={onCopy}
+          aria-label={copied ? "已复制代码" : "复制代码"}
+        >
+          {copied ? <CheckIcon /> : <CopyIcon />}
+          <span>{copied ? "已复制" : "复制"}</span>
         </button>
       </div>
       <pre>

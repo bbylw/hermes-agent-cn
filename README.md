@@ -3,6 +3,7 @@
 </p>
 
 # Hermes Agent ☤
+
 <p align="center">
   <a href="https://hermes-agent.nousresearch.com/">Hermes Agent</a> | <a href="https://hermes-agent.nousresearch.com/">Hermes Desktop</a>
 </p>
@@ -94,6 +95,7 @@ Expand-Archive $zip "$env:TEMP\uv_x" -Force
 如果签名验证显示 "Verification succeeded" 且最后一行打印 `True`，就说明没问题。
 
 **将 Hermes 加入白名单：**
+
 - **Windows Defender：** 以管理员身份运行 PowerShell → `Add-MpPreference -ExclusionPath "$env:LOCALAPPDATA\hermes\bin"`
 - **Bitdefender：** 在 Bitdefender 控制台中添加例外（Protection > Antivirus > Settings > Manage Exceptions）
 - 将**文件夹**加入白名单，而不是文件哈希——Hermes 会更新 `uv`，而哈希在每个版本都会变化
@@ -144,17 +146,17 @@ hermes setup --portal
 
 Hermes 有两个入口：用 `hermes` 启动终端 UI，或运行网关并通过 Telegram、Discord、Slack、WhatsApp、Signal 或邮件与它对话。一旦进入对话，许多斜杠命令在两个界面之间是共享的。
 
-| 操作 | CLI | 消息平台 |
-| ------------------------------ | --------------------------------------------- | -------------------------------------------------------------------------------- |
-| 开始聊天 | `hermes` | 运行 `hermes gateway setup` + `hermes gateway start`，然后给机器人发一条消息 |
-| 开始新对话 | `/new` 或 `/reset` | `/new` 或 `/reset` |
-| 切换模型 | `/model [provider:model]` | `/model [provider:model]` |
-| 设置人格 | `/personality [name]` | `/personality [name]` |
-| 重试或撤销上一轮 | `/retry`、`/undo` | `/retry`、`/undo` |
-| 压缩上下文 / 查看用量 | `/compress`、`/usage`、`/insights [--days N]` | `/compress`、`/usage`、`/insights [days]` |
-| 浏览技能 | `/skills` 或 `/<skill-name>` | `/<skill-name>` |
-| 中断当前工作 | `Ctrl+C` 或发送新消息 | `/stop` 或发送新消息 |
-| 平台特定状态 | `/platforms` | `/status`、`/sethome` |
+| 操作                  | CLI                                           | 消息平台                                                                     |
+| --------------------- | --------------------------------------------- | ---------------------------------------------------------------------------- |
+| 开始聊天              | `hermes`                                      | 运行 `hermes gateway setup` + `hermes gateway start`，然后给机器人发一条消息 |
+| 开始新对话            | `/new` 或 `/reset`                            | `/new` 或 `/reset`                                                           |
+| 切换模型              | `/model [provider:model]`                     | `/model [provider:model]`                                                    |
+| 设置人格              | `/personality [name]`                         | `/personality [name]`                                                        |
+| 重试或撤销上一轮      | `/retry`、`/undo`                             | `/retry`、`/undo`                                                            |
+| 压缩上下文 / 查看用量 | `/compress`、`/usage`、`/insights [--days N]` | `/compress`、`/usage`、`/insights [days]`                                    |
+| 浏览技能              | `/skills` 或 `/<skill-name>`                  | `/<skill-name>`                                                              |
+| 中断当前工作          | `Ctrl+C` 或发送新消息                         | `/stop` 或发送新消息                                                         |
+| 平台特定状态          | `/platforms`                                  | `/status`、`/sethome`                                                        |
 
 完整命令列表，请参见 [CLI 指南](https://hermes-agent.nousresearch.com/docs/user-guide/cli) 和 [消息网关指南](https://hermes-agent.nousresearch.com/docs/user-guide/messaging)。
 
@@ -164,23 +166,23 @@ Hermes 有两个入口：用 `hermes` 启动终端 UI，或运行网关并通过
 
 所有文档均位于 **[hermes-agent.nousresearch.com/docs](https://hermes-agent.nousresearch.com/docs/)**：
 
-| 章节 | 内容覆盖 |
-| --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
-| [快速开始](https://hermes-agent.nousresearch.com/docs/getting-started/quickstart) | 安装 → 设置 → 2 分钟内完成首次对话 |
-| [CLI 用法](https://hermes-agent.nousresearch.com/docs/user-guide/cli) | 命令、键位绑定、人格、会话 |
-| [配置](https://hermes-agent.nousresearch.com/docs/user-guide/configuration) | 配置文件、提供商、模型、所有选项 |
-| [消息网关](https://hermes-agent.nousresearch.com/docs/user-guide/messaging) | Telegram、Discord、Slack、WhatsApp、Signal、Home Assistant |
-| [安全](https://hermes-agent.nousresearch.com/docs/user-guide/security) | 命令审批、私信配对、容器隔离 |
-| [工具与工具集](https://hermes-agent.nousresearch.com/docs/user-guide/features/tools) | 40+ 工具、工具集系统、终端后端 |
-| [技能系统](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills) | 程序化记忆、技能中心、创建技能 |
-| [记忆](https://hermes-agent.nousresearch.com/docs/user-guide/features/memory) | 持久记忆、用户画像、最佳实践 |
-| [MCP 集成](https://hermes-agent.nousresearch.com/docs/user-guide/features/mcp) | 连接任意 MCP 服务器以扩展能力 |
-| [Cron 调度](https://hermes-agent.nousresearch.com/docs/user-guide/features/cron) | 带平台投递的定时任务 |
-| [上下文文件](https://hermes-agent.nousresearch.com/docs/user-guide/features/context-files) | 塑造每次对话的项目上下文 |
-| [架构](https://hermes-agent.nousresearch.com/docs/developer-guide/architecture) | 项目结构、智能体循环、关键类 |
-| [贡献](https://hermes-agent.nousresearch.com/docs/developer-guide/contributing) | 开发设置、PR 流程、代码风格 |
-| [CLI 参考](https://hermes-agent.nousresearch.com/docs/reference/cli-commands) | 所有命令与参数 |
-| [环境变量](https://hermes-agent.nousresearch.com/docs/reference/environment-variables) | 完整的环境变量参考 |
+| 章节                                                                                       | 内容覆盖                                                   |
+| ------------------------------------------------------------------------------------------ | ---------------------------------------------------------- |
+| [快速开始](https://hermes-agent.nousresearch.com/docs/getting-started/quickstart)          | 安装 → 设置 → 2 分钟内完成首次对话                         |
+| [CLI 用法](https://hermes-agent.nousresearch.com/docs/user-guide/cli)                      | 命令、键位绑定、人格、会话                                 |
+| [配置](https://hermes-agent.nousresearch.com/docs/user-guide/configuration)                | 配置文件、提供商、模型、所有选项                           |
+| [消息网关](https://hermes-agent.nousresearch.com/docs/user-guide/messaging)                | Telegram、Discord、Slack、WhatsApp、Signal、Home Assistant |
+| [安全](https://hermes-agent.nousresearch.com/docs/user-guide/security)                     | 命令审批、私信配对、容器隔离                               |
+| [工具与工具集](https://hermes-agent.nousresearch.com/docs/user-guide/features/tools)       | 40+ 工具、工具集系统、终端后端                             |
+| [技能系统](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills)          | 程序化记忆、技能中心、创建技能                             |
+| [记忆](https://hermes-agent.nousresearch.com/docs/user-guide/features/memory)              | 持久记忆、用户画像、最佳实践                               |
+| [MCP 集成](https://hermes-agent.nousresearch.com/docs/user-guide/features/mcp)             | 连接任意 MCP 服务器以扩展能力                              |
+| [Cron 调度](https://hermes-agent.nousresearch.com/docs/user-guide/features/cron)           | 带平台投递的定时任务                                       |
+| [上下文文件](https://hermes-agent.nousresearch.com/docs/user-guide/features/context-files) | 塑造每次对话的项目上下文                                   |
+| [架构](https://hermes-agent.nousresearch.com/docs/developer-guide/architecture)            | 项目结构、智能体循环、关键类                               |
+| [贡献](https://hermes-agent.nousresearch.com/docs/developer-guide/contributing)            | 开发设置、PR 流程、代码风格                                |
+| [CLI 参考](https://hermes-agent.nousresearch.com/docs/reference/cli-commands)              | 所有命令与参数                                             |
+| [环境变量](https://hermes-agent.nousresearch.com/docs/reference/environment-variables)     | 完整的环境变量参考                                         |
 
 ---
 

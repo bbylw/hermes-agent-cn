@@ -147,3 +147,71 @@ export function slugify(text: string): string {
     .replace(/[^\p{L}\p{N}]+/gu, "-")
     .replace(/^-+|-+$/g, "");
 }
+
+export interface FlatDoc {
+  id: string;
+  title: string;
+  zh: boolean;
+  group: string;
+}
+
+/** Flatten all docs in navigational sequence. */
+export function flattenNavDocs(nodes: NavNode[] = docsNav, group = ""): FlatDoc[] {
+  const result: FlatDoc[] = [];
+  for (const node of nodes) {
+    if (node.type === "doc") {
+      result.push({
+        id: node.id,
+        title: node.title ?? node.id,
+        zh: node.zh,
+        group,
+      });
+    } else if (node.type === "category") {
+      const nextGroup = group ? `${group} / ${node.label}` : node.label;
+      result.push(...flattenNavDocs(node.items, nextGroup));
+    }
+  }
+  return result;
+}
+
+export interface BreadcrumbItem {
+  label: string;
+  to?: string;
+}
+
+/** Get breadcrumb trail for a document ID. */
+export function getDocBreadcrumbs(id: string, nodes: NavNode[] = docsNav): BreadcrumbItem[] {
+  const trail: BreadcrumbItem[] = [{ label: "文档", to: "/docs" }];
+
+  function findPath(currentNodes: NavNode[], currentTrail: BreadcrumbItem[]): boolean {
+    for (const node of currentNodes) {
+      if (node.type === "doc") {
+        if (node.id === id) {
+          trail.push(...currentTrail, { label: node.title ?? node.id, to: `/docs/${node.id}` });
+          return true;
+        }
+      } else if (node.type === "category") {
+        if (findPath(node.items, [...currentTrail, { label: node.label }])) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  findPath(nodes, []);
+  return trail;
+}
+
+/** Get previous and next documents in navigation order. */
+export function getAdjacentDocs(id: string) {
+  const list = flattenNavDocs(docsNav).filter((d) => d.zh);
+  const index = list.findIndex((d) => d.id === id);
+  if (index === -1) {
+    return { prev: null, next: null };
+  }
+  return {
+    prev: index > 0 ? list[index - 1] : null,
+    next: index < list.length - 1 ? list[index + 1] : null,
+  };
+}

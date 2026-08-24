@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import type { DocMeta } from "../content/docs";
-import { loadDoc, preprocessMarkdown } from "../content/docs";
+import { getAdjacentDocs, getDocBreadcrumbs, loadDoc, preprocessMarkdown } from "../content/docs";
 import { useRenderedDoc } from "../lib/markdown";
 
 function NotFound({ id }: { id: string }) {
@@ -34,6 +34,23 @@ function Loading() {
   );
 }
 
+function ArrowUpIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <line x1="12" y1="19" x2="12" y2="5" />
+      <polyline points="5 12 12 5 19 12" />
+    </svg>
+  );
+}
+
 export default function DocsPage() {
   const params = useParams();
   const id = useMemo(() => {
@@ -44,6 +61,9 @@ export default function DocsPage() {
   const [raw, setRaw] = useState<string | null>(null);
   const [meta, setMeta] = useState<DocMeta | null>(null);
   const [state, setState] = useState<"loading" | "ready" | "missing">("loading");
+
+  const breadcrumbs = useMemo(() => getDocBreadcrumbs(id), [id]);
+  const adjacent = useMemo(() => getAdjacentDocs(id), [id]);
 
   useEffect(() => {
     let cancelled = false;
@@ -67,6 +87,10 @@ export default function DocsPage() {
   const body = useMemo(() => (raw == null ? null : preprocessMarkdown(raw, id)), [raw, id]);
   const rendered = useRenderedDoc(body ?? "");
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   if (state === "missing") return <NotFound id={id} />;
   if (state === "loading" || body == null) return <Loading />;
 
@@ -79,6 +103,18 @@ export default function DocsPage() {
   if (!body.trim()) {
     return (
       <article className="doc-article">
+        <nav className="doc-breadcrumbs" aria-label="文档路径">
+          {breadcrumbs.map((b, idx) => (
+            <span key={idx} className="doc-breadcrumb-item">
+              {idx > 0 && <span className="doc-breadcrumb-sep">/</span>}
+              {b.to && idx < breadcrumbs.length - 1 ? (
+                <Link to={b.to}>{b.label}</Link>
+              ) : (
+                <span className="doc-breadcrumb-current">{b.label}</span>
+              )}
+            </span>
+          ))}
+        </nav>
         <h1 className="doc-title">{meta?.title ?? id}</h1>
         {meta?.description && <p className="doc-description">{meta.description}</p>}
         <div className="doc-empty">
@@ -93,14 +129,62 @@ export default function DocsPage() {
 
   return (
     <article className="doc-article">
+      <nav className="doc-breadcrumbs" aria-label="文档路径">
+        {breadcrumbs.map((b, idx) => (
+          <span key={idx} className="doc-breadcrumb-item">
+            {idx > 0 && <span className="doc-breadcrumb-sep">/</span>}
+            {b.to && idx < breadcrumbs.length - 1 ? (
+              <Link to={b.to}>{b.label}</Link>
+            ) : (
+              <span className="doc-breadcrumb-current">{b.label}</span>
+            )}
+          </span>
+        ))}
+      </nav>
+
       {!hasH1 && meta?.title && <h1 className="doc-title">{meta.title}</h1>}
       {!hasH1 && meta?.description && <p className="doc-description">{meta.description}</p>}
+
       <div className="doc-content">{rendered}</div>
+
+      {(adjacent.prev || adjacent.next) && (
+        <div className="doc-pagination">
+          {adjacent.prev ? (
+            <Link to={`/docs/${adjacent.prev.id}`} className="doc-page-card prev">
+              <span className="doc-page-card-dir">← 上一篇</span>
+              <span className="doc-page-card-title">{adjacent.prev.title}</span>
+            </Link>
+          ) : (
+            <div className="doc-page-card-placeholder" />
+          )}
+          {adjacent.next ? (
+            <Link to={`/docs/${adjacent.next.id}`} className="doc-page-card next">
+              <span className="doc-page-card-dir">下一篇 →</span>
+              <span className="doc-page-card-title">{adjacent.next.title}</span>
+            </Link>
+          ) : (
+            <div className="doc-page-card-placeholder" />
+          )}
+        </div>
+      )}
+
       <footer className="doc-footer">
-        <a href={external} target="_blank" rel="noopener noreferrer">
-          在完整文档站查看此页 ↗
-        </a>
-        <Link to="/docs">返回文档首页</Link>
+        <div className="doc-footer-left">
+          <a href={external} target="_blank" rel="noopener noreferrer">
+            在完整文档站查看此页 ↗
+          </a>
+          <span className="doc-footer-sep">·</span>
+          <Link to="/docs">返回文档首页</Link>
+        </div>
+        <button
+          type="button"
+          className="doc-back-to-top"
+          onClick={scrollToTop}
+          aria-label="回到顶部"
+        >
+          <ArrowUpIcon />
+          回到顶部
+        </button>
       </footer>
     </article>
   );

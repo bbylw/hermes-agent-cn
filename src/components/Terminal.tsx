@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 type OutputLine = [cls: string, text: string];
 
@@ -49,13 +49,32 @@ function promptLine(): HTMLDivElement {
   return row;
 }
 
-/**
- * Self-typing terminal demo. The animation is driven imperatively (exactly like
- * the vanilla page) so the typing cadence and DOM structure are identical; the
- * effect cleans up its timers and observer on unmount.
- */
+function RefreshIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <polyline points="23 4 23 10 17 10" />
+      <polyline points="1 20 1 14 7 14" />
+      <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+    </svg>
+  );
+}
+
 export default function Terminal() {
   const bodyRef = useRef<HTMLDivElement>(null);
+  const runRef = useRef<(() => void) | null>(null);
+  const [isRunning, setIsRunning] = useState(false);
+
+  const startAnimation = useCallback(() => {
+    runRef.current?.();
+  }, []);
 
   useEffect(() => {
     const body = bodyRef.current;
@@ -73,24 +92,33 @@ export default function Terminal() {
       timers.add(id);
     };
 
+    function clearAllTimers() {
+      timers.forEach((id) => clearTimeout(id));
+      timers.clear();
+    }
+
     function run() {
-      body.innerHTML = "";
+      clearAllTimers();
+      setIsRunning(true);
+      body!.innerHTML = "";
       let i = 0;
+
       function nextCmd() {
         if (cancelled) return;
         if (i >= SCRIPT.length) {
-          body.appendChild(promptLine());
+          body!.appendChild(promptLine());
+          setIsRunning(false);
           return;
         }
         const item = SCRIPT[i];
         const line = promptLine();
-        body.appendChild(line);
+        body!.appendChild(line);
         const cmdSpan = line.querySelector(".t-cmd") as HTMLSpanElement;
         const cursor = line.querySelector(".t-cursor") as HTMLSpanElement;
         const text = item.cmd;
         if (reduced) {
           cmdSpan.textContent = text;
-          item.out.forEach((o) => body.appendChild(lineEl(o[0], o[1])));
+          item.out.forEach((o) => body!.appendChild(lineEl(o[0], o[1])));
           i++;
           nextCmd();
           return;
@@ -109,7 +137,7 @@ export default function Terminal() {
               if (cancelled) return;
               if (k < item.out.length) {
                 const o = item.out[k];
-                body.appendChild(lineEl(o[0], o[1]));
+                body!.appendChild(lineEl(o[0], o[1]));
                 k++;
                 later(outputs, 260);
               } else {
@@ -122,6 +150,8 @@ export default function Terminal() {
       }
       nextCmd();
     }
+
+    runRef.current = run;
 
     const tio = new IntersectionObserver(
       (entries) => {
@@ -139,8 +169,7 @@ export default function Terminal() {
 
     return () => {
       cancelled = true;
-      timers.forEach((id) => clearTimeout(id));
-      timers.clear();
+      clearAllTimers();
       tio.disconnect();
     };
   }, []);
@@ -148,10 +177,28 @@ export default function Terminal() {
   return (
     <div className="term" role="img" aria-label="终端演示：安装并配置 Hermes Agent">
       <div className="term-bar">
-        <i></i>
-        <i></i>
-        <i></i>
+        <div className="term-dots" aria-hidden="true">
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
         <span className="term-title">hermes — zsh</span>
+        <div className="term-bar-actions">
+          <span className="term-status-pill">
+            <span className={`term-pulse-dot${isRunning ? " active" : ""}`} />
+            {isRunning ? "运行中" : "就绪"}
+          </span>
+          <button
+            type="button"
+            className="term-replay-btn"
+            onClick={startAnimation}
+            title="重新播放终端演示"
+            aria-label="重新播放演示"
+          >
+            <RefreshIcon />
+            重播
+          </button>
+        </div>
       </div>
       <div className="term-body" ref={bodyRef}></div>
     </div>
