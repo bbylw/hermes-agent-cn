@@ -7,8 +7,7 @@
     "dev": "vp dev",
     "build": "vp build",
     "preview": "vp preview",
-    "check": "vp check",
-    "deploy": "bun run build && node scripts/deploy-ghpages.mjs"
+    "check": "vp check"
   },
   "dependencies": {
     "hast-util-to-html": "^9.0.5",
@@ -29,7 +28,6 @@
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.5",
     "@vitejs/plugin-react": "^6.1.0",
-    "gh-pages": "^6.3.0",
     "typescript": "~7.0.2",
     "vite-plus": "^0.3.0"
   },
