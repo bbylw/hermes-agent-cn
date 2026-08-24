@@ -1,0 +1,6 @@
+node_modules
+dist
+*.local
+.firecrawl
+.DS_Store
+.playwright-cli

@@ -1,0 +1,2720 @@
+[
+  {
+    "type": "doc",
+    "id": "user-stories",
+    "zh": true,
+    "title": "用户故事与使用案例"
+  },
+  {
+    "type": "category",
+    "label": "快速开始",
+    "items": [
+      {
+        "type": "doc",
+        "id": "getting-started/quickstart",
+        "zh": true,
+        "title": "快速入门"
+      },
+      {
+        "type": "doc",
+        "id": "getting-started/installation",
+        "zh": true,
+        "title": "安装"
+      },
+      {
+        "type": "doc",
+        "id": "getting-started/platform-support",
+        "zh": false,
+        "title": "平台支持"
+      },
+      {
+        "type": "doc",
+        "id": "getting-started/termux",
+        "zh": true,
+        "title": "Android / Termux"
+      },
+      {
+        "type": "doc",
+        "id": "getting-started/nix-setup",
+        "zh": true,
+        "title": "Nix & NixOS 安装配置"
+      },
+      {
+        "type": "doc",
+        "id": "getting-started/updating",
+        "zh": true,
+        "title": "更新与卸载"
+      },
+      {
+        "type": "doc",
+        "id": "getting-started/learning-path",
+        "zh": true,
+        "title": "学习路径"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "使用 Hermes",
+    "items": [
+      {
+        "type": "doc",
+        "id": "user-guide/cli",
+        "zh": true,
+        "title": "CLI 界面"
+      },
+      {
+        "type": "doc",
+        "id": "user-guide/tui",
+        "zh": true,
+        "title": "TUI"
+      },
+      {
+        "type": "doc",
+        "id": "user-guide/desktop",
+        "zh": false,
+        "title": "桌面端"
+      },
+      {
+        "type": "doc",
+        "id": "user-guide/bot-mode",
+        "zh": false,
+        "title": "机器人模式"
+      },
+      {
+        "type": "doc",
+        "id": "user-guide/windows-native",
+        "zh": true,
+        "title": "Windows（原生）指南"
+      },
+      {
+        "type": "doc",
+        "id": "user-guide/windows-wsl-quickstart",
+        "zh": true,
+        "title": "Windows (WSL2) 指南"
+      },
+      {
+        "type": "doc",
+        "id": "user-guide/configuration",
+        "zh": true,
+        "title": "配置"
+      },
+      {
+        "type": "doc",
+        "id": "user-guide/managed-scope",
+        "zh": false,
+        "title": "托管作用域"
+      },
+      {
+        "type": "doc",
+        "id": "user-guide/configuring-models",
+        "zh": true,
+        "title": "配置模型"
+      },
+      {
+        "type": "category",
+        "label": "密钥管理",
+        "items": [
+          {
+            "type": "doc",
+            "id": "user-guide/secrets/index",
+            "zh": true,
+            "title": "Secrets"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/secrets/bitwarden",
+            "zh": true,
+            "title": "Bitwarden Secrets Manager"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/secrets/onepassword",
+            "zh": false,
+            "title": "1Password 集成"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "出口代理",
+        "items": [
+          {
+            "type": "doc",
+            "id": "user-guide/egress/index",
+            "zh": false,
+            "title": "出口代理（总览）"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/egress/iron-proxy",
+            "zh": false,
+            "title": "Iron 代理"
+          }
+        ]
+      },
+      {
+        "type": "doc",
+        "id": "user-guide/sessions",
+        "zh": true,
+        "title": "Sessions（会话）"
+      },
+      {
+        "type": "doc",
+        "id": "user-guide/profiles",
+        "zh": true,
+        "title": "Profiles：运行多个 Agent"
+      },
+      {
+        "type": "doc",
+        "id": "user-guide/profile-distributions",
+        "zh": true,
+        "title": "Profile 分发：共享完整 Agent"
+      },
+      {
+        "type": "doc",
+        "id": "user-guide/multi-profile-gateways",
+        "zh": false,
+        "title": "多配置文件网关"
+      },
+      {
+        "type": "doc",
+        "id": "user-guide/multi-connection-desktop",
+        "zh": false,
+        "title": "桌面端多连接"
+      },
+      {
+        "type": "doc",
+        "id": "user-guide/git-worktrees",
+        "zh": true,
+        "title": "Git Worktrees"
+      },
+      {
+        "type": "doc",
+        "id": "user-guide/docker",
+        "zh": true,
+        "title": "Docker"
+      },
+      {
+        "type": "doc",
+        "id": "user-guide/security",
+        "zh": true,
+        "title": "安全"
+      },
+      {
+        "type": "doc",
+        "id": "user-guide/checkpoints-and-rollback",
+        "zh": true,
+        "title": "检查点与 /rollback"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "功能特性",
+    "items": [
+      {
+        "type": "doc",
+        "id": "user-guide/features/overview",
+        "zh": true,
+        "title": "功能概览"
+      },
+      {
+        "type": "doc",
+        "id": "user-guide/features/tool-gateway",
+        "zh": true,
+        "title": "Nous Tool Gateway（工具网关）"
+      },
+      {
+        "type": "category",
+        "label": "核心",
+        "items": [
+          {
+            "type": "doc",
+            "id": "user-guide/features/tools",
+            "zh": true,
+            "title": "工具与工具集"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/document-extraction",
+            "zh": false,
+            "title": "文档提取"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/tool-search",
+            "zh": false,
+            "title": "工具搜索"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/skills",
+            "zh": true,
+            "title": "Skills 系统"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/lsp",
+            "zh": true,
+            "title": "LSP — 语义诊断"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/curator",
+            "zh": true,
+            "title": "Curator"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/memory",
+            "zh": true,
+            "title": "持久化记忆"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/memory-providers",
+            "zh": true,
+            "title": "Memory Providers"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/honcho",
+            "zh": true,
+            "title": "Honcho Memory"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/context-files",
+            "zh": true,
+            "title": "上下文文件"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/context-references",
+            "zh": true,
+            "title": "Context References"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/mixture-of-agents",
+            "zh": false,
+            "title": "混合智能体"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/personality",
+            "zh": true,
+            "title": "个性与 SOUL.md"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/skins",
+            "zh": true,
+            "title": "皮肤与主题"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/plugins",
+            "zh": true,
+            "title": "Plugins"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/built-in-plugins",
+            "zh": true,
+            "title": "内置插件"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "自动化",
+        "items": [
+          {
+            "type": "doc",
+            "id": "user-guide/features/cron",
+            "zh": true,
+            "title": "定时任务（Cron）"
+          },
+          {
+            "type": "doc",
+            "id": "reference/automation-blueprints-catalog",
+            "zh": false,
+            "title": "自动化蓝图目录"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/delegation",
+            "zh": true,
+            "title": "子智能体委派"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/kanban",
+            "zh": true,
+            "title": "Kanban（多 Agent 看板）"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/codex-app-server-runtime",
+            "zh": true,
+            "title": "Codex App-Server 运行时（可选）"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/kanban-tutorial",
+            "zh": true,
+            "title": "Kanban 教程"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/kanban-worker-lanes",
+            "zh": true,
+            "title": "Kanban worker lanes（工作者通道）"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/goals",
+            "zh": true,
+            "title": "持久目标"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/heartbeat",
+            "zh": false,
+            "title": "心跳机制"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/loops",
+            "zh": false,
+            "title": "循环"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/code-execution",
+            "zh": true,
+            "title": "代码执行"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/hooks",
+            "zh": true,
+            "title": "Event Hooks"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/batch-processing",
+            "zh": true,
+            "title": "批量处理"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "媒体与网络",
+        "items": [
+          {
+            "type": "doc",
+            "id": "user-guide/features/voice-mode",
+            "zh": true,
+            "title": "语音模式"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/wake-word",
+            "zh": false,
+            "title": "唤醒词"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/web-search",
+            "zh": true,
+            "title": "网页搜索与提取"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/x-search",
+            "zh": true,
+            "title": "X (Twitter) 搜索"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/browser",
+            "zh": true,
+            "title": "浏览器自动化"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/computer-use",
+            "zh": true,
+            "title": "电脑操控"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/vision",
+            "zh": true,
+            "title": "视觉与图像粘贴"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/image-generation",
+            "zh": true,
+            "title": "文生图（Image Generation）"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/spotify",
+            "zh": true,
+            "title": "Spotify"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/pets",
+            "zh": false,
+            "title": "宠物"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/tts",
+            "zh": true,
+            "title": "语音与 TTS"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/deliverable-mode",
+            "zh": true,
+            "title": "可交付成果模式（聊天中的 Artifacts）"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "管理",
+        "items": [
+          {
+            "type": "doc",
+            "id": "user-guide/features/web-dashboard",
+            "zh": true,
+            "title": "Web Dashboard"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/extending-the-dashboard",
+            "zh": true,
+            "title": "扩展 Dashboard"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/api-server",
+            "zh": true,
+            "title": "API 服务器"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/features/subscription-proxy",
+            "zh": true,
+            "title": "订阅代理"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "技能",
+        "items": [
+          {
+            "type": "doc",
+            "id": "reference/skills-catalog",
+            "zh": true,
+            "title": "内置技能目录"
+          },
+          {
+            "type": "doc",
+            "id": "reference/optional-skills-catalog",
+            "zh": true,
+            "title": "可选技能目录"
+          },
+          {
+            "type": "category",
+            "label": "内置",
+            "items": [
+              {
+                "type": "category",
+                "label": "Apple",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/apple/apple-apple-notes",
+                    "zh": true,
+                    "title": "Apple Notes — 通过 memo CLI 管理 Apple Notes：创建、搜索、编辑"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/apple/apple-apple-reminders",
+                    "zh": true,
+                    "title": "Apple Reminders — 通过 remindctl 管理 Apple Reminders：添加、列出、完成"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/apple/apple-findmy",
+                    "zh": true,
+                    "title": "Findmy — 通过 FindMy 追踪 Apple 设备/AirTag"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/apple/apple-imessage",
+                    "zh": true,
+                    "title": "Imessage — 通过 macOS 上的 imsg CLI 发送和接收 iMessages/SMS"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "自主 AI 智能体",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/autonomous-ai-agents/autonomous-ai-agents-claude-code",
+                    "zh": true,
+                    "title": "Claude Code — 将编码任务委托给 Claude Code CLI（功能、PR）"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/autonomous-ai-agents/autonomous-ai-agents-codex",
+                    "zh": true,
+                    "title": "Codex — 将编码任务委托给 OpenAI Codex CLI（功能开发、PR）"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/autonomous-ai-agents/autonomous-ai-agents-computer-use",
+                    "zh": false,
+                    "title": "电脑操控"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/autonomous-ai-agents/autonomous-ai-agents-hermes-agent",
+                    "zh": true,
+                    "title": "Hermes Agent — 配置、扩展或贡献 Hermes Agent"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/autonomous-ai-agents/autonomous-ai-agents-opencode",
+                    "zh": true,
+                    "title": "Opencode — 将编码任务委托给 OpenCode CLI（功能开发、PR 审查）"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "创意",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/creative/creative-architecture-diagram",
+                    "zh": true,
+                    "title": "Architecture Diagram — 深色主题 SVG 架构/云/基础设施图表（HTML 格式）"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/creative/creative-ascii-art",
+                    "zh": true,
+                    "title": "Ascii Art — ASCII art: pyfiglet, cowsay, boxes, image-to-ascii"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/creative/creative-ascii-video",
+                    "zh": true,
+                    "title": "Ascii Video — ASCII 视频：将视频/音频转换为彩色 ASCII MP4/GIF"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/creative/creative-baoyu-infographic",
+                    "zh": true,
+                    "title": "Baoyu Infographic — 信息图：21种布局 × 21种风格（信息图, 可视化）"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/creative/creative-claude-design",
+                    "zh": true,
+                    "title": "Claude Design — 设计一次性 HTML 制品（落地页、幻灯片、原型）"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/creative/creative-comfyui",
+                    "zh": true,
+                    "title": "Comfyui"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/creative/creative-design-md",
+                    "zh": true,
+                    "title": "Design Md — 编写/验证/导出 Google 的 DESIGN"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/creative/creative-excalidraw",
+                    "zh": true,
+                    "title": "Excalidraw — 手绘风格 Excalidraw JSON 图表（架构图、流程图、时序图）"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/creative/creative-humanizer",
+                    "zh": true,
+                    "title": "Humanizer — 人性化文本：去除 AI 腔调，注入真实声音"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/creative/creative-manim-video",
+                    "zh": true,
+                    "title": "Manim Video — Manim CE 动画：3Blue1Brown 数学/算法视频"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/creative/creative-p5js",
+                    "zh": true,
+                    "title": "P5Js — p5"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/creative/creative-popular-web-designs",
+                    "zh": true,
+                    "title": "流行网页设计 — 54 个真实设计系统（Stripe、Linear、Vercel）的 HTML/CSS"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/creative/creative-pretext",
+                    "zh": true,
+                    "title": "Pretext"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/creative/creative-sketch",
+                    "zh": true,
+                    "title": "Sketch — 一次性 HTML 原型：2-3 个设计方案对比"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/creative/creative-songwriting-and-ai-music",
+                    "zh": true,
+                    "title": "Songwriting And Ai Music — 歌词创作与 Suno AI 音乐提示词"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/creative/creative-touchdesigner-mcp",
+                    "zh": true,
+                    "title": "Touchdesigner Mcp"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "邮件",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/email/email-email-inbox-triage",
+                    "zh": false,
+                    "title": "收件箱分类"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/email/email-himalaya",
+                    "zh": true,
+                    "title": "Himalaya — Himalaya CLI: IMAP/SMTP email from terminal"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "GitHub",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/github/github-codebase-inspection",
+                    "zh": true,
+                    "title": "代码库检查 — 使用 pygount 检查代码库：代码行数、语言、占比"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/github/github-github-auth",
+                    "zh": true,
+                    "title": "Github Auth — GitHub auth setup: HTTPS tokens, SSH keys, gh CLI login"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/github/github-github-code-review",
+                    "zh": true,
+                    "title": "Github Code Review — 通过 gh 或 REST 审查 PR：差异对比、行内评论"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/github/github-github-issue-to-pr",
+                    "zh": false,
+                    "title": "Issue 转 PR"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/github/github-github-issues",
+                    "zh": true,
+                    "title": "Github Issues — 通过 gh 或 REST 创建、分类、标记、分配 GitHub Issues"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/github/github-github-pr-workflow",
+                    "zh": true,
+                    "title": "Github Pr Workflow — GitHub PR 生命周期：分支、提交、开启、CI、合并"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/github/github-github-repo-management",
+                    "zh": true,
+                    "title": "Github 仓库管理 — 克隆/创建/fork 仓库；管理远程、发布"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "媒体",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/media/media-gif-search",
+                    "zh": true,
+                    "title": "Gif Search — 通过 curl + jq 搜索/下载 Tenor GIF"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/media/media-songsee",
+                    "zh": true,
+                    "title": "Songsee — 通过 CLI 生成音频频谱图/特征（mel、chroma、MFCC）"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/media/media-youtube-content",
+                    "zh": true,
+                    "title": "Youtube Content — YouTube 视频转文字摘要、推文、博客"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "MLOps",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/mlops/mlops-evaluation-evaluating-llms-harness",
+                    "zh": true,
+                    "title": "Evaluating Llms Harness — lm-eval-harness: benchmark LLMs (MMLU, GSM8K, etc"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/mlops/mlops-huggingface-hub",
+                    "zh": true,
+                    "title": "Huggingface Hub — HuggingFace hf CLI：搜索/下载/上传模型、数据集"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/mlops/mlops-inference-llama-cpp",
+                    "zh": true,
+                    "title": "Llama Cpp — llama"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/mlops/mlops-inference-serving-llms-vllm",
+                    "zh": true,
+                    "title": "Serving Llms Vllm — vLLM：高吞吐量 LLM 服务、OpenAI API、量化"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/mlops/mlops-evaluation-weights-and-biases",
+                    "zh": true,
+                    "title": "Weights And Biases — W&B：记录 ML 实验、sweeps、模型注册表、仪表盘"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "笔记",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/note-taking/note-taking-obsidian",
+                    "zh": true,
+                    "title": "Obsidian — 在 Obsidian 知识库中读取、搜索、创建和编辑笔记"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "生产力",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/productivity/productivity-airtable",
+                    "zh": true,
+                    "title": "Airtable — 通过 curl 调用 Airtable REST API"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/productivity/productivity-box",
+                    "zh": false,
+                    "title": "文件盒"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/productivity/productivity-document-to-action-items",
+                    "zh": false,
+                    "title": "文档转行动项"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/productivity/productivity-docx",
+                    "zh": false,
+                    "title": "DOCX 文档处理"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/productivity/productivity-google-workspace",
+                    "zh": true,
+                    "title": "Google Workspace — 通过 gws CLI 或 Python 使用 Gmail、Calendar、Drive、Docs、Sheets"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/productivity/productivity-maps",
+                    "zh": true,
+                    "title": "Maps — 通过 OpenStreetMap/OSRM 进行地理编码、POI、路线、时区查询"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/productivity/productivity-meeting-action-items",
+                    "zh": false,
+                    "title": "会议行动项"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/productivity/productivity-nano-pdf",
+                    "zh": true,
+                    "title": "Nano Pdf — 通过自然语言指令编辑现有 PDF 中的文本"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/productivity/productivity-notion",
+                    "zh": true,
+                    "title": "Notion — Notion API + ntn CLI：页面、数据库、Markdown、Workers"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/productivity/productivity-ocr-and-documents",
+                    "zh": true,
+                    "title": "Ocr And Documents — 从 PDF/扫描件中提取文本（pymupdf、marker-pdf）"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/productivity/productivity-pdf",
+                    "zh": false,
+                    "title": "PDF 文档处理"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/productivity/productivity-powerpoint",
+                    "zh": true,
+                    "title": "Powerpoint — 创建、读取、编辑"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/productivity/productivity-product-price-monitor",
+                    "zh": false,
+                    "title": "商品价格监控"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/productivity/productivity-session-librarian",
+                    "zh": false,
+                    "title": "会话管理员"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/productivity/productivity-teams-meeting-pipeline",
+                    "zh": true,
+                    "title": "Teams Meeting Pipeline"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/productivity/productivity-weekly-review-planning",
+                    "zh": false,
+                    "title": "周报规划"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/productivity/productivity-xlsx",
+                    "zh": false,
+                    "title": "XLSX 表格处理"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "研究",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/research/research-arxiv",
+                    "zh": true,
+                    "title": "Arxiv — 通过关键词、作者、分类或 ID 搜索 arXiv 论文"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/research/research-blocked-page-recovery",
+                    "zh": false,
+                    "title": "页面恢复"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/research/research-blogwatcher",
+                    "zh": true,
+                    "title": "Blogwatcher — 通过 blogwatcher-cli 工具监控博客和 RSS/Atom 订阅源"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/research/research-competitor-news-monitor",
+                    "zh": false,
+                    "title": "竞品新闻监控"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/research/research-grounded-citations",
+                    "zh": false,
+                    "title": "有据引用"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/research/research-llm-wiki",
+                    "zh": true,
+                    "title": "Llm Wiki — Karpathy 的 LLM Wiki：构建/查询互联 Markdown 知识库"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/research/research-research-paper-writing",
+                    "zh": true,
+                    "title": "研究论文写作 — 为 NeurIPS/ICML/ICLR 撰写 ML 论文：设计→投稿"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "智能家居",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/smart-home/smart-home-openhue",
+                    "zh": true,
+                    "title": "Openhue — 通过 OpenHue CLI 控制 Philips Hue 灯光、场景和房间"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "社交媒体",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/social-media/social-media-xurl",
+                    "zh": true,
+                    "title": "Xurl — 通过 xurl CLI 使用 X/Twitter：发帖、搜索、私信、媒体、v2 API"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "软件开发",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/software-development/software-development-dogfood",
+                    "zh": true,
+                    "title": "Dogfood — 网页应用探索性 QA：发现缺陷、收集证据、生成报告"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/software-development/software-development-hermes-agent-skill-authoring",
+                    "zh": true,
+                    "title": "Hermes Agent Skill 编写——在仓库中编写 SKILL"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/software-development/software-development-inspecting-hermes-desktop-dom",
+                    "zh": false,
+                    "title": "检查 Hermes 桌面 DOM"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/software-development/software-development-node-inspect-debugger",
+                    "zh": true,
+                    "title": "Node Inspect 调试器 — 调试 Node"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/software-development/software-development-plan",
+                    "zh": true,
+                    "title": "Plan — Plan 模式：将 Markdown 计划写入"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/software-development/software-development-python-debugpy",
+                    "zh": true,
+                    "title": "Python Debugpy — 调试 Python：pdb REPL + debugpy 远程（DAP）"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/software-development/software-development-requesting-code-review",
+                    "zh": true,
+                    "title": "请求代码审查 — 提交前审查：安全扫描、质量门控、自动修复"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/software-development/software-development-simplify-code",
+                    "zh": false,
+                    "title": "简化代码"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/software-development/software-development-spike",
+                    "zh": true,
+                    "title": "Spike — 在构建前验证想法的一次性实验"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/software-development/software-development-systematic-debugging",
+                    "zh": true,
+                    "title": "系统化调试 — 4阶段根因调试：先理解缺陷再修复"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/bundled/software-development/software-development-test-driven-development",
+                    "zh": true,
+                    "title": "测试驱动开发 — TDD：强制执行 RED-GREEN-REFACTOR，测试先于代码"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "category",
+            "label": "可选",
+            "items": [
+              {
+                "type": "category",
+                "label": "自主 AI 智能体",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/autonomous-ai-agents/autonomous-ai-agents-antigravity-cli",
+                    "zh": false,
+                    "title": "Antigravity CLI"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/autonomous-ai-agents/autonomous-ai-agents-blackbox",
+                    "zh": true,
+                    "title": "Blackbox — 将编码任务委托给 Blackbox AI CLI 代理"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/autonomous-ai-agents/autonomous-ai-agents-grok",
+                    "zh": false,
+                    "title": "Grok"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/autonomous-ai-agents/autonomous-ai-agents-honcho",
+                    "zh": true,
+                    "title": "Honcho"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/autonomous-ai-agents/autonomous-ai-agents-openhands",
+                    "zh": false,
+                    "title": "OpenHands"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "区块链",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/blockchain/blockchain-evm",
+                    "zh": true,
+                    "title": "Evm — 只读 EVM 客户端：跨 8 条链的钱包、代币、Gas"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/blockchain/blockchain-hyperliquid",
+                    "zh": true,
+                    "title": "Hyperliquid — Hyperliquid 市场数据、账户历史、交易复盘"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/blockchain/blockchain-solana",
+                    "zh": true,
+                    "title": "Solana"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "通信",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/communication/communication-one-three-one-rule",
+                    "zh": true,
+                    "title": "One Three One Rule — 技术提案与权衡分析的结构化决策框架"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "创意",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/creative/creative-audiocraft-audio-generation",
+                    "zh": true,
+                    "title": "Audiocraft 音频生成 — AudioCraft：MusicGen 文本转音乐，AudioGen 文本转声音"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/creative/creative-baoyu-article-illustrator",
+                    "zh": false,
+                    "title": "文章配图师"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/creative/creative-baoyu-comic",
+                    "zh": false,
+                    "title": "漫画生成"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/creative/creative-concept-diagrams",
+                    "zh": true,
+                    "title": "概念图"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/creative/creative-creative-ideation",
+                    "zh": false,
+                    "title": "创意构思"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/creative/creative-draw-your-font",
+                    "zh": false,
+                    "title": "绘制字体"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/creative/creative-heartmula",
+                    "zh": true,
+                    "title": "Heartmula — HeartMuLa：基于歌词与标签的类 Suno 歌曲生成"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/creative/creative-hyperframes",
+                    "zh": true,
+                    "title": "Hyperframes"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/creative/creative-kanban-video-orchestrator",
+                    "zh": true,
+                    "title": "Kanban Video Orchestrator — 规划、搭建并监控由 Hermes Kanban 支撑的多智能体视频制作流水线"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/creative/creative-meme-generation",
+                    "zh": true,
+                    "title": "Meme Generation — 使用 Pillow 选取模板并叠加文字，生成真实的表情包图片"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/creative/creative-pixel-art",
+                    "zh": false,
+                    "title": "像素画"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/creative/creative-simple-english",
+                    "zh": false,
+                    "title": "简易英语"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/creative/creative-social-media-content-calendar",
+                    "zh": false,
+                    "title": "社媒内容日历"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/creative/creative-tldraw-offline",
+                    "zh": false,
+                    "title": "tldraw 离线"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/creative/creative-unreal-mcp",
+                    "zh": false,
+                    "title": "Unreal MCP"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "数据科学",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/data-science/data-science-jupyter-notebook",
+                    "zh": true,
+                    "title": "Jupyter Notebook — 通过实时 Jupyter 内核进行迭代式 Python 开发（hamelnb）"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "DevOps",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/devops/devops-actual-setup",
+                    "zh": false,
+                    "title": "实际搭建"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/devops/devops-docker-management",
+                    "zh": true,
+                    "title": "Docker 管理"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/devops/devops-hermes-s6-container-supervision",
+                    "zh": false,
+                    "title": "S6 容器监管"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/devops/devops-inference-sh-cli",
+                    "zh": true,
+                    "title": "Inference Sh Cli — 通过 inference 运行 150+ AI 应用"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/devops/devops-pinggy-tunnel",
+                    "zh": true,
+                    "title": "Pinggy Tunnel — 通过 Pinggy 实现零安装 SSH localhost 隧道"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/devops/devops-watchers",
+                    "zh": true,
+                    "title": "Watchers — 使用水印去重轮询 RSS、JSON API 和 GitHub"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "内部试用",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/dogfood/dogfood-adversarial-ux-test",
+                    "zh": true,
+                    "title": "对抗性 UX 测试 — 扮演产品最难搞的技术抵触用户"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "邮件",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/email/email-agentmail",
+                    "zh": true,
+                    "title": "Agentmail — 通过 AgentMail 为 Agent 提供专属电子邮件收件箱"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "金融",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/finance/finance-3-statement-model",
+                    "zh": true,
+                    "title": "三表模型"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/finance/finance-comps-analysis",
+                    "zh": true,
+                    "title": "可比公司分析"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/finance/finance-dcf-model",
+                    "zh": true,
+                    "title": "DCF 模型"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/finance/finance-excel-author",
+                    "zh": true,
+                    "title": "Excel Author"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/finance/finance-lbo-model",
+                    "zh": true,
+                    "title": "Lbo Model"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/finance/finance-merger-model",
+                    "zh": true,
+                    "title": "并购模型 — 在 Excel 中构建增厚/摊薄（并购）模型 — 备考损益表、协同效应、融资结构、每股收益影响"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/finance/finance-polymarket",
+                    "zh": true,
+                    "title": "Polymarket — 查询 Polymarket：市场、价格、订单簿、历史记录"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/finance/finance-pptx-author",
+                    "zh": true,
+                    "title": "Pptx Author — 使用 python-pptx 无头构建 PowerPoint 演示文稿"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/finance/finance-stocks",
+                    "zh": true,
+                    "title": "Stocks — 通过 Yahoo 获取股票报价、历史、搜索、比较及加密货币数据"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "游戏",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/gaming/gaming-minecraft-modpack-server",
+                    "zh": false,
+                    "title": "Minecraft 整合包服务器"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/gaming/gaming-pokemon-player",
+                    "zh": false,
+                    "title": "宝可梦玩家"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "健康",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/health/health-fitness-nutrition",
+                    "zh": true,
+                    "title": "健身营养 — 健身房训练计划与营养追踪"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/health/health-neuroskill-bci",
+                    "zh": true,
+                    "title": "Neuroskill Bci"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "MCP",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mcp/mcp-fastmcp",
+                    "zh": true,
+                    "title": "Fastmcp — 使用 FastMCP 在 Python 中构建、测试、检查、安装和部署 MCP 服务器"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mcp/mcp-mcp-oauth-remote-gateway",
+                    "zh": false,
+                    "title": "MCP OAuth 远程网关"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mcp/mcp-mcporter",
+                    "zh": true,
+                    "title": "Mcporter"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "迁移",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/migration/migration-openclaw-migration",
+                    "zh": true,
+                    "title": "Openclaw Migration — 将用户的 OpenClaw 自定义配置迁移到 Hermes Agent"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "MLOps",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-accelerate",
+                    "zh": true,
+                    "title": "Huggingface Accelerate — 最简分布式训练 API"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-training-axolotl",
+                    "zh": true,
+                    "title": "Axolotl — Axolotl：基于 YAML 的 LLM 微调（LoRA、DPO、GRPO）"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-chroma",
+                    "zh": true,
+                    "title": "Chroma — 面向 AI 应用的开源 embedding 数据库"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-clip",
+                    "zh": true,
+                    "title": "Clip — OpenAI 连接视觉与语言的模型"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-research-dspy",
+                    "zh": false,
+                    "title": "DSPy 研究"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-faiss",
+                    "zh": true,
+                    "title": "Faiss — Facebook 用于高效相似性搜索和密集向量聚类的库"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-flash-attention",
+                    "zh": true,
+                    "title": "优化注意力 Flash"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-guidance",
+                    "zh": true,
+                    "title": "Guidance"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-huggingface-tokenizers",
+                    "zh": true,
+                    "title": "Huggingface Tokenizers — 为研究和生产优化的快速 tokenizer"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-instructor",
+                    "zh": true,
+                    "title": "Instructor"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-lambda-labs",
+                    "zh": true,
+                    "title": "Lambda Labs Gpu Cloud — 用于 ML 训练和推理的预留及按需 GPU 云实例"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-llava",
+                    "zh": true,
+                    "title": "Llava — 大型语言与视觉助手"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-modal",
+                    "zh": true,
+                    "title": "Modal Serverless Gpu — 用于运行 ML 工作负载的无服务器 GPU 云平台"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-nemo-curator",
+                    "zh": true,
+                    "title": "Nemo Curator — 用于 LLM 训练的 GPU 加速数据整理工具"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-obliteratus",
+                    "zh": false,
+                    "title": "Obliteratus"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-inference-outlines",
+                    "zh": true,
+                    "title": "Outlines — Outlines：结构化 JSON/regex/Pydantic LLM 生成"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-peft",
+                    "zh": true,
+                    "title": "Peft Fine Tuning — 使用 LoRA、QLoRA 及 25+ 种方法对 LLM 进行参数高效微调"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-pinecone",
+                    "zh": true,
+                    "title": "Pinecone — 面向生产级 AI 应用的托管向量数据库"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-pytorch-fsdp",
+                    "zh": true,
+                    "title": "Pytorch Fsdp"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-pytorch-lightning",
+                    "zh": true,
+                    "title": "Pytorch Lightning"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-qdrant",
+                    "zh": true,
+                    "title": "Qdrant Vector Search — 用于 RAG 和语义搜索的高性能向量相似度搜索引擎"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-saelens",
+                    "zh": true,
+                    "title": "稀疏自编码器训练"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-models-segment-anything-model",
+                    "zh": true,
+                    "title": "Segment Anything Model — SAM：通过点、框、掩码实现零样本图像分割"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-simpo",
+                    "zh": true,
+                    "title": "Simpo 训练 — 用于 LLM 对齐的简单偏好优化"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-slime",
+                    "zh": true,
+                    "title": "Slime Rl Training — 使用 slime（Megatron+SGLang 框架）进行 LLM RL 后训练的指导"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-stable-diffusion",
+                    "zh": true,
+                    "title": "Stable Diffusion 图像生成"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-tensorrt-llm",
+                    "zh": true,
+                    "title": "Tensorrt Llm — 使用 NVIDIA TensorRT 优化 LLM 推理以实现最大吞吐量和最低延迟"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-torchtitan",
+                    "zh": true,
+                    "title": "Distributed Llm Pretraining Torchtitan"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-training-trl-fine-tuning",
+                    "zh": true,
+                    "title": "使用 TRL 进行微调 — TRL：面向 LLM RLHF 的 SFT、DPO、PPO、GRPO 及奖励建模"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-training-unsloth",
+                    "zh": true,
+                    "title": "Unsloth — Unsloth：2-5倍更快的 LoRA/QLoRA 微调，更少显存"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/mlops/mlops-whisper",
+                    "zh": true,
+                    "title": "Whisper — OpenAI 的通用语音识别模型"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "支付",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/payments/payments-mpp-agent",
+                    "zh": false,
+                    "title": "MPP 代理"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/payments/payments-stripe-link-cli",
+                    "zh": false,
+                    "title": "Stripe Link CLI"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/payments/payments-stripe-projects",
+                    "zh": false,
+                    "title": "Stripe 项目"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "生产力",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/productivity/productivity-canvas",
+                    "zh": true,
+                    "title": "Canvas — Canvas LMS 集成 — 使用 API token 认证获取已注册课程和作业"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/productivity/productivity-here-now",
+                    "zh": true,
+                    "title": "Here.Now — 将静态站点发布到 {slug}"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/productivity/productivity-memento-flashcards",
+                    "zh": true,
+                    "title": "Memento Flashcards — 间隔重复闪卡系统"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/productivity/productivity-shop",
+                    "zh": true,
+                    "title": "Shop — Shop.app：商品搜索、订单追踪、退货、重新下单"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/productivity/productivity-shopify",
+                    "zh": true,
+                    "title": "Shopify — 通过 curl 使用 Shopify Admin 与 Storefront GraphQL API"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/productivity/productivity-siyuan",
+                    "zh": true,
+                    "title": "Siyuan"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/productivity/productivity-telephony",
+                    "zh": true,
+                    "title": "电话功能 — 无需修改核心工具即可赋予 Hermes 电话能力"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "研究",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/research/research-bioinformatics",
+                    "zh": true,
+                    "title": "生物信息学 — 来自 bioSkills 和 ClawBio 的 400+ 生物信息学技能网关"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/research/research-darwinian-evolver",
+                    "zh": true,
+                    "title": "Darwinian Evolver — 使用 Imbue 的进化循环来优化 prompt/正则/SQL/代码"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/research/research-domain-intel",
+                    "zh": true,
+                    "title": "Domain Intel — 使用 Python 标准库进行被动域名侦察"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/research/research-drug-discovery",
+                    "zh": true,
+                    "title": "Drug Discovery — 药物发现工作流的制药研究助手"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/research/research-duckduckgo-search",
+                    "zh": true,
+                    "title": "Duckduckgo Search — 通过 DuckDuckGo 免费搜索网络 — 文本、新闻、图片、视频"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/research/research-gitnexus-explorer",
+                    "zh": true,
+                    "title": "Gitnexus Explorer"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/research/research-osint-investigation",
+                    "zh": true,
+                    "title": "Osint Investigation"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/research/research-parallel-cli",
+                    "zh": true,
+                    "title": "Parallel Cli"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/research/research-pinecone-research",
+                    "zh": false,
+                    "title": "Pinecone 研究"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/research/research-qmd",
+                    "zh": true,
+                    "title": "Qmd"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/research/research-scrapling",
+                    "zh": true,
+                    "title": "Scrapling"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/research/research-searxng-search",
+                    "zh": true,
+                    "title": "Searxng Search — 通过 SearXNG 免费元搜索 — 聚合 70+ 搜索引擎的结果"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "安全",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/security/security-1password",
+                    "zh": true,
+                    "title": "1Password — 设置并使用 1Password CLI (op)"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/security/security-godmode",
+                    "zh": false,
+                    "title": "GodMode"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/security/security-oss-forensics",
+                    "zh": true,
+                    "title": "Oss Forensics — GitHub 仓库的供应链调查、证据恢复与取证分析"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/security/security-sherlock",
+                    "zh": true,
+                    "title": "Sherlock — 跨 400+ 社交网络的 OSINT 用户名搜索"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/security/security-unbroker",
+                    "zh": false,
+                    "title": "Unbroker"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/security/security-web-pentest",
+                    "zh": false,
+                    "title": "Web 渗透测试"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "软件开发",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/software-development/software-development-code-wiki",
+                    "zh": false,
+                    "title": "代码百科"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/software-development/software-development-rest-graphql-debug",
+                    "zh": true,
+                    "title": "Rest Graphql Debug — 调试 REST/GraphQL API：状态码、认证、Schema、复现"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/software-development/software-development-subagent-driven-development",
+                    "zh": false,
+                    "title": "子代理驱动开发"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "Web 开发",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/web-development/web-development-cloudflare-temporary-deploy",
+                    "zh": false,
+                    "title": "Cloudflare 临时部署"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/web-development/web-development-page-agent",
+                    "zh": true,
+                    "title": "Page Agent"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "元宝",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "user-guide/skills/optional/yuanbao/yuanbao-yuanbao",
+                    "zh": true,
+                    "title": "Yuanbao — Yuanbao（元宝）群组：@提及用户、查询信息/成员"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "消息平台",
+    "items": [
+      {
+        "type": "doc",
+        "id": "user-guide/messaging/index",
+        "zh": true,
+        "title": "消息网关"
+      },
+      {
+        "type": "category",
+        "label": "热门",
+        "items": [
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/telegram",
+            "zh": true,
+            "title": "Telegram"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/discord",
+            "zh": true,
+            "title": "Discord"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/slack",
+            "zh": true,
+            "title": "Slack"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/whatsapp",
+            "zh": true,
+            "title": "WhatsApp"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/whatsapp-cloud",
+            "zh": false,
+            "title": "WhatsApp 云 API"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/signal",
+            "zh": true,
+            "title": "Signal"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/email",
+            "zh": true,
+            "title": "电子邮件"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/sms",
+            "zh": true,
+            "title": "SMS (Twilio)"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Microsoft 365",
+        "items": [
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/teams",
+            "zh": true,
+            "title": "Microsoft Teams"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/teams-meetings",
+            "zh": true,
+            "title": "Teams 会议"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/msgraph-webhook",
+            "zh": true,
+            "title": "Microsoft Graph Webhook 监听器"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "中文平台",
+        "items": [
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/dingtalk",
+            "zh": true,
+            "title": "DingTalk"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/feishu",
+            "zh": true,
+            "title": "飞书 / Lark"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/wecom",
+            "zh": true,
+            "title": "WeCom（企业微信）"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/wecom-callback",
+            "zh": true,
+            "title": "WeCom 回调（自建应用）"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/weixin",
+            "zh": true,
+            "title": "微信（Weixin）"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/qqbot",
+            "zh": true,
+            "title": "QQ Bot"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/yuanbao",
+            "zh": true,
+            "title": "Yuanbao"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "其他",
+        "items": [
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/a2a",
+            "zh": false,
+            "title": "A2A 协议"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/homeassistant",
+            "zh": true,
+            "title": "Home Assistant"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/mattermost",
+            "zh": true,
+            "title": "Mattermost"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/matrix",
+            "zh": true,
+            "title": "Matrix"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/bluebubbles",
+            "zh": true,
+            "title": "BlueBubbles（iMessage）"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/buzz",
+            "zh": false,
+            "title": "Buzz"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/photon",
+            "zh": false,
+            "title": "Photon"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/google_chat",
+            "zh": true,
+            "title": "Google Chat"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/line",
+            "zh": true,
+            "title": "LINE"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/simplex",
+            "zh": true,
+            "title": "SimpleX Chat"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/ntfy",
+            "zh": true,
+            "title": "ntfy"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/irc",
+            "zh": false,
+            "title": "IRC"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/open-webui",
+            "zh": true,
+            "title": "Open WebUI"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/relay",
+            "zh": false,
+            "title": "Relay"
+          },
+          {
+            "type": "doc",
+            "id": "user-guide/messaging/webhooks",
+            "zh": true,
+            "title": "Webhooks"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "集成",
+    "items": [
+      {
+        "type": "doc",
+        "id": "integrations/index",
+        "zh": true,
+        "title": "集成"
+      },
+      {
+        "type": "doc",
+        "id": "integrations/nous-portal",
+        "zh": true,
+        "title": "Nous Portal"
+      },
+      {
+        "type": "doc",
+        "id": "integrations/providers",
+        "zh": true,
+        "title": "AI 提供商"
+      },
+      {
+        "type": "doc",
+        "id": "integrations/buzz",
+        "zh": true,
+        "title": "Buzz 集成"
+      },
+      {
+        "type": "doc",
+        "id": "user-guide/features/mcp",
+        "zh": true,
+        "title": "MCP（模型上下文协议）"
+      },
+      {
+        "type": "doc",
+        "id": "user-guide/features/acp",
+        "zh": true,
+        "title": "ACP 宿主集成"
+      },
+      {
+        "type": "doc",
+        "id": "user-guide/features/provider-routing",
+        "zh": true,
+        "title": "Provider Routing"
+      },
+      {
+        "type": "doc",
+        "id": "user-guide/features/fallback-providers",
+        "zh": true,
+        "title": "备用提供商"
+      },
+      {
+        "type": "doc",
+        "id": "user-guide/features/credential-pools",
+        "zh": true,
+        "title": "凭证池"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "指南与教程",
+    "items": [
+      {
+        "type": "doc",
+        "id": "guides/run-nemotron-3-ultra-free",
+        "zh": false,
+        "title": "免费运行 Nemotron 3 Ultra"
+      },
+      {
+        "type": "doc",
+        "id": "guides/run-hermes-with-nous-portal",
+        "zh": true,
+        "title": "通过 Nous Portal 运行 Hermes Agent"
+      },
+      {
+        "type": "doc",
+        "id": "guides/tips",
+        "zh": true,
+        "title": "技巧与最佳实践"
+      },
+      {
+        "type": "doc",
+        "id": "guides/local-llm-on-mac",
+        "zh": true,
+        "title": "在 Mac 上运行本地 LLM"
+      },
+      {
+        "type": "doc",
+        "id": "guides/daily-briefing-bot",
+        "zh": true,
+        "title": "教程：每日简报机器人"
+      },
+      {
+        "type": "doc",
+        "id": "guides/team-telegram-assistant",
+        "zh": true,
+        "title": "教程：团队 Telegram 助手"
+      },
+      {
+        "type": "doc",
+        "id": "guides/python-library",
+        "zh": true,
+        "title": "将 Hermes 作为 Python 库使用"
+      },
+      {
+        "type": "doc",
+        "id": "guides/use-mcp-with-hermes",
+        "zh": true,
+        "title": "在 Hermes 中使用 MCP"
+      },
+      {
+        "type": "doc",
+        "id": "guides/manage-hermes-cloud-with-mcp",
+        "zh": false,
+        "title": "用 MCP 管理 Hermes Cloud"
+      },
+      {
+        "type": "doc",
+        "id": "guides/use-soul-with-hermes",
+        "zh": true,
+        "title": "在 Hermes 中使用 SOUL.md"
+      },
+      {
+        "type": "doc",
+        "id": "guides/use-voice-mode-with-hermes",
+        "zh": true,
+        "title": "在 Hermes 中使用语音模式"
+      },
+      {
+        "type": "doc",
+        "id": "guides/automate-with-cron",
+        "zh": true,
+        "title": "用 Cron 自动化一切"
+      },
+      {
+        "type": "doc",
+        "id": "guides/cron-script-only",
+        "zh": true,
+        "title": "纯脚本 Cron 任务（无 LLM）"
+      },
+      {
+        "type": "doc",
+        "id": "guides/automation-blueprints",
+        "zh": true,
+        "title": "自动化蓝图"
+      },
+      {
+        "type": "doc",
+        "id": "guides/cron-troubleshooting",
+        "zh": true,
+        "title": "Cron 故障排查"
+      },
+      {
+        "type": "doc",
+        "id": "guides/work-with-skills",
+        "zh": true,
+        "title": "使用 Skills"
+      },
+      {
+        "type": "doc",
+        "id": "guides/delegation-patterns",
+        "zh": true,
+        "title": "委托与并行工作"
+      },
+      {
+        "type": "doc",
+        "id": "guides/agent-email-address",
+        "zh": false,
+        "title": "智能体邮箱地址"
+      },
+      {
+        "type": "doc",
+        "id": "guides/github-pr-review-agent",
+        "zh": true,
+        "title": "教程：GitHub PR 审查 Agent"
+      },
+      {
+        "type": "doc",
+        "id": "guides/webhook-github-pr-review",
+        "zh": true,
+        "title": "使用 Webhook 自动发布 GitHub PR 评论"
+      },
+      {
+        "type": "doc",
+        "id": "guides/migrate-from-openclaw",
+        "zh": true,
+        "title": "从 OpenClaw 迁移"
+      },
+      {
+        "type": "doc",
+        "id": "guides/aws-bedrock",
+        "zh": true,
+        "title": "AWS Bedrock"
+      },
+      {
+        "type": "doc",
+        "id": "guides/google-vertex",
+        "zh": false,
+        "title": "Google Vertex"
+      },
+      {
+        "type": "doc",
+        "id": "guides/azure-foundry",
+        "zh": true,
+        "title": "Microsoft Foundry"
+      },
+      {
+        "type": "doc",
+        "id": "guides/xai-grok-oauth",
+        "zh": true,
+        "title": "xAI Grok OAuth（SuperGrok / X Premium+）"
+      },
+      {
+        "type": "doc",
+        "id": "guides/oauth-over-ssh",
+        "zh": true,
+        "title": "SSH / 远程主机上的 OAuth"
+      },
+      {
+        "type": "doc",
+        "id": "guides/microsoft-graph-app-registration",
+        "zh": true,
+        "title": "注册 Microsoft Graph 应用程序"
+      },
+      {
+        "type": "doc",
+        "id": "guides/operate-teams-meeting-pipeline",
+        "zh": true,
+        "title": "操作 Teams 会议流水线"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "开发者指南",
+    "items": [
+      {
+        "type": "doc",
+        "id": "developer-guide/contributing",
+        "zh": true,
+        "title": "贡献指南"
+      },
+      {
+        "type": "doc",
+        "id": "developer-guide/worktree-ui-dev",
+        "zh": false,
+        "title": "Worktree UI 开发"
+      },
+      {
+        "type": "category",
+        "label": "架构",
+        "items": [
+          {
+            "type": "doc",
+            "id": "developer-guide/architecture",
+            "zh": true,
+            "title": "架构"
+          },
+          {
+            "type": "doc",
+            "id": "developer-guide/codebase-ownership",
+            "zh": false,
+            "title": "代码库所有权"
+          },
+          {
+            "type": "doc",
+            "id": "developer-guide/agent-loop",
+            "zh": true,
+            "title": "Agent Loop 内部机制"
+          },
+          {
+            "type": "doc",
+            "id": "developer-guide/prompt-assembly",
+            "zh": true,
+            "title": "Prompt 组装"
+          },
+          {
+            "type": "doc",
+            "id": "developer-guide/context-compression-and-caching",
+            "zh": true,
+            "title": "上下文压缩与缓存"
+          },
+          {
+            "type": "doc",
+            "id": "developer-guide/gateway-internals",
+            "zh": true,
+            "title": "Gateway 内部机制"
+          },
+          {
+            "type": "doc",
+            "id": "developer-guide/session-storage",
+            "zh": true,
+            "title": "会话存储"
+          },
+          {
+            "type": "doc",
+            "id": "developer-guide/provider-runtime",
+            "zh": true,
+            "title": "Provider 运行时解析"
+          },
+          {
+            "type": "doc",
+            "id": "developer-guide/programmatic-integration",
+            "zh": true,
+            "title": "程序化集成"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "扩展",
+        "items": [
+          {
+            "type": "doc",
+            "id": "developer-guide/adding-tools",
+            "zh": true,
+            "title": "添加工具"
+          },
+          {
+            "type": "doc",
+            "id": "developer-guide/adding-providers",
+            "zh": true,
+            "title": "添加 Provider"
+          },
+          {
+            "type": "doc",
+            "id": "developer-guide/adding-platform-adapters",
+            "zh": true,
+            "title": "添加平台适配器"
+          },
+          {
+            "type": "category",
+            "label": "插件",
+            "items": [
+              {
+                "type": "doc",
+                "id": "developer-guide/plugin-llm-access",
+                "zh": true,
+                "title": "Plugin LLM 访问"
+              },
+              {
+                "type": "doc",
+                "id": "developer-guide/subagent-lifecycle-api",
+                "zh": false,
+                "title": "子代理生命周期 API"
+              },
+              {
+                "type": "doc",
+                "id": "developer-guide/desktop-plugin-sdk",
+                "zh": false,
+                "title": "桌面插件 SDK"
+              },
+              {
+                "type": "doc",
+                "id": "developer-guide/memory-provider-plugin",
+                "zh": true,
+                "title": "Memory Provider 插件"
+              },
+              {
+                "type": "doc",
+                "id": "developer-guide/context-engine-plugin",
+                "zh": true,
+                "title": "Context Engine 插件"
+              },
+              {
+                "type": "doc",
+                "id": "developer-guide/secret-source-plugin",
+                "zh": false,
+                "title": "密钥源插件"
+              },
+              {
+                "type": "doc",
+                "id": "developer-guide/model-provider-plugin",
+                "zh": true,
+                "title": "模型提供商插件"
+              },
+              {
+                "type": "doc",
+                "id": "developer-guide/image-gen-provider-plugin",
+                "zh": true,
+                "title": "图像生成 Provider 插件"
+              },
+              {
+                "type": "doc",
+                "id": "developer-guide/video-gen-provider-plugin",
+                "zh": true,
+                "title": "视频生成 Provider 插件"
+              },
+              {
+                "type": "doc",
+                "id": "developer-guide/web-search-provider-plugin",
+                "zh": true,
+                "title": "网页搜索提供商插件"
+              },
+              {
+                "type": "doc",
+                "id": "developer-guide/browser-provider-plugin",
+                "zh": false,
+                "title": "浏览器提供方插件"
+              }
+            ]
+          },
+          {
+            "type": "doc",
+            "id": "developer-guide/creating-skills",
+            "zh": true,
+            "title": "创建 Skill"
+          },
+          {
+            "type": "doc",
+            "id": "developer-guide/extending-the-cli",
+            "zh": true,
+            "title": "扩展 CLI"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "内部原理",
+        "items": [
+          {
+            "type": "doc",
+            "id": "developer-guide/tools-runtime",
+            "zh": true,
+            "title": "工具运行时"
+          },
+          {
+            "type": "doc",
+            "id": "developer-guide/browser-supervisor",
+            "zh": true,
+            "title": "Browser CDP Supervisor — 设计文档"
+          },
+          {
+            "type": "doc",
+            "id": "developer-guide/acp-internals",
+            "zh": true,
+            "title": "ACP 内部机制"
+          },
+          {
+            "type": "doc",
+            "id": "developer-guide/cron-internals",
+            "zh": true,
+            "title": "Cron 内部机制"
+          },
+          {
+            "type": "doc",
+            "id": "developer-guide/egress-internals",
+            "zh": false,
+            "title": "Egress 内部原理"
+          },
+          {
+            "type": "doc",
+            "id": "developer-guide/trajectory-format",
+            "zh": true,
+            "title": "轨迹格式"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "参考手册",
+    "items": [
+      {
+        "type": "category",
+        "label": "命令参考",
+        "items": [
+          {
+            "type": "doc",
+            "id": "reference/cli-commands",
+            "zh": true,
+            "title": "CLI 命令参考"
+          },
+          {
+            "type": "doc",
+            "id": "reference/slash-commands",
+            "zh": true,
+            "title": "斜杠命令参考"
+          },
+          {
+            "type": "doc",
+            "id": "reference/profile-commands",
+            "zh": true,
+            "title": "Profile 命令参考"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "配置参考",
+        "items": [
+          {
+            "type": "doc",
+            "id": "reference/environment-variables",
+            "zh": true,
+            "title": "环境变量"
+          },
+          {
+            "type": "doc",
+            "id": "reference/mcp-config-reference",
+            "zh": true,
+            "title": "MCP 配置参考"
+          },
+          {
+            "type": "doc",
+            "id": "reference/model-catalog",
+            "zh": true,
+            "title": "模型目录"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "工具与技能参考",
+        "items": [
+          {
+            "type": "doc",
+            "id": "reference/tools-reference",
+            "zh": true,
+            "title": "内置工具参考"
+          },
+          {
+            "type": "doc",
+            "id": "reference/toolsets-reference",
+            "zh": true,
+            "title": "工具集参考"
+          },
+          {
+            "type": "doc",
+            "id": "reference/skills-catalog",
+            "zh": true,
+            "title": "内置技能目录"
+          },
+          {
+            "type": "doc",
+            "id": "reference/optional-skills-catalog",
+            "zh": true,
+            "title": "可选技能目录"
+          }
+        ]
+      },
+      {
+        "type": "doc",
+        "id": "reference/cli-symbols",
+        "zh": false,
+        "title": "CLI 符号"
+      },
+      {
+        "type": "doc",
+        "id": "reference/faq",
+        "zh": true,
+        "title": "常见问题与故障排查"
+      }
+    ]
+  }
+]
